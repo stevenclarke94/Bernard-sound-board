@@ -64,11 +64,37 @@
         var audio = document.getElementById("how-are-you");
         audio.play();
       }
+      function yes() {
+        var audio = document.getElementById("yes");
+        audio.play();
+      }
+      function no() {
+        var audio = document.getElementById("no");
+        audio.play();
+      }
+
+      function hungry() {
+        var audio = document.getElementById("hungry");
+        audio.play();
+      }
+      function tired() {
+        var audio = document.getElementById("tired");
+        audio.play();
+      }
+      function shutUp() {
+        var audio = document.getElementById("shut-up");
+        audio.play();
+      }
+
+      function letsGoOutside() {
+        var audio = document.getElementById("lets-go-outside");
+        audio.play();
+      }
     </script>
     <div class="container">
       <div class="wrapper">
         <div class="row">
-          <input type="button" class="col" value="Hello" onclick="hello()" />
+     <input type="button" class="col" value="Hello" onclick="hello()" />
           <audio id="audio" src="hello.mp3"></audio>
 
           <!--hello-->
@@ -89,7 +115,36 @@
             onclick="howAreYou()"
           />
           <audio id="how-are-you" src="how-are-you.mp3"></audio>
-          <!--goodbye-->
+          <!--How are you-->
+
+          <input type="button" class="col" value="yes" onclick="yes()" />
+          <audio id="yes" src="yes.mp3"></audio>
+          <!--yes-->
+
+          <input type="button" class="col" value="no" onclick="no()" />
+          <audio id="no" src="no.mp3"></audio>
+          <!--no-->
+
+          <input type="button" class="col" value="hungry" onclick="hungry()" />
+          <audio id="hungry" src="i-am-hungry.mp3"></audio>
+          <!--hungry-->
+
+          <input type="button" class="col" value="tired" onclick="tired()" />
+          <audio id="tired" src="i-am-tired.mp3"></audio>
+          <!--tired-->
+
+          <input type="button" class="col" value="shut up" onclick="shutUp()" />
+          <audio id="shut-up" src="shut-up.mp3"></audio>
+          <!--shut up-->
+
+          <input
+            type="button"
+            class="col"
+            value="lets go outside"
+            onclick="letsGoOutside()"
+          />
+          <audio id="lets-go-outside" src="lets-go-outside.mp3"></audio>
+          <!--shut up-->
         </div>
       </div>
     </div>
