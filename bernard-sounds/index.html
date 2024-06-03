@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Audio</title>
+    <style>
+      .container {
+        max-width: 2000px;
+        width: 100%;
+      }
+      .wrapper {
+        max-width: 1000px;
+        margin: auto;
+        text-align: center;
+      }
+
+      .row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        flex: 1;
+      }
+      .col {
+        flex: 1 1 300px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100px;
+        background-color: green;
+      }
+      @media (max-width: 400px) {
+        .row {
+          flex-direction: column;
+        }
+        .col {
+          width: 100%;
+          flex: auto;
+        }
+        input {
+          font-size: 35px;
+        }
+      }
+      input {
+        border: none;
+        font-size: 24px;
+        color: white;
+        background: none;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      function hello() {
+        var audio = document.getElementById("audio");
+        audio.play();
+      }
+      function goodbye() {
+        var audio = document.getElementById("goodbye");
+        audio.play();
+      }
+      function howAreYou() {
+        var audio = document.getElementById("how-are-you");
+        audio.play();
+      }
+      function yes() {
+        var audio = document.getElementById("yes");
+        audio.play();
+      }
+      function no() {
+        var audio = document.getElementById("no");
+        audio.play();
+      }
+
+      function hungry() {
+        var audio = document.getElementById("hungry");
+        audio.play();
+      }
+      function tired() {
+        var audio = document.getElementById("tired");
+        audio.play();
+      }
+      function shutUp() {
+        var audio = document.getElementById("shut-up");
+        audio.play();
+      }
+
+      function letsGoOutside() {
+        var audio = document.getElementById("lets-go-outside");
+        audio.play();
+      }
+    </script>
+    <div class="container">
+      <div class="wrapper">
+        <div class="row">
+          <input type="button" class="col" value="Hello" onclick="hello()" />
+          <audio id="audio" src="hello.mp3"></audio>
+
+          <!--hello-->
+
+          <input
+            type="button"
+            class="col"
+            value="goodbye"
+            onclick="goodbye()"
+          />
+          <audio id="goodbye" src="goodbye.mp3"></audio>
+          <!--goodbye-->
+
+          <input
+            type="button"
+            class="col"
+            value="how-are-you"
+            onclick="howAreYou()"
+          />
+          <audio id="how-are-you" src="how-are-you.mp3"></audio>
+          <!--How are you-->
+
+          <input type="button" class="col" value="yes" onclick="yes()" />
+          <audio id="yes" src="yes.mp3"></audio>
+          <!--yes-->
+
+          <input type="button" class="col" value="no" onclick="no()" />
+          <audio id="no" src="no.mp3"></audio>
+          <!--no-->
+
+          <input type="button" class="col" value="hungry" onclick="hungry()" />
+          <audio id="hungry" src="i-am-hungry.mp3"></audio>
+          <!--hungry-->
+
+          <input type="button" class="col" value="tired" onclick="tired()" />
+          <audio id="tired" src="i-am-tired.mp3"></audio>
+          <!--tired-->
+
+          <input type="button" class="col" value="shut up" onclick="shutUp()" />
+          <audio id="shut-up" src="shut-up.mp3"></audio>
+          <!--shut up-->
+
+          <input
+            type="button"
+            class="col"
+            value="lets go outside"
+            onclick="letsGoOutside()"
+          />
+          <audio id="lets-go-outside" src="lets-go-outside.mp3"></audio>
+          <!--shut up-->
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
