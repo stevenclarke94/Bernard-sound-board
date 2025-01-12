@@ -28,8 +28,21 @@
         align-items: center;
         justify-content: center;
         height: 100px;
+      }
+      .green {
         background-color: green;
       }
+      .yellow{
+        background-color: rgb(184, 127, 21);
+      }
+      .red{
+        background-color: red;
+      }
+      .blue{
+        background-color: rgb(0, 162, 255);
+      }
+
+      
       @media (max-width: 400px) {
         .row {
           flex-direction: column;
@@ -81,27 +94,47 @@
         var audio = document.getElementById("tired");
         audio.play();
       }
-      function shutUp() {
-        var audio = document.getElementById("shut-up");
-        audio.play();
-      }
+      // function shutUp() {
+      //   var audio = document.getElementById("shut-up");
+      //   audio.play();
+      // }
 
       function letsGoOutside() {
         var audio = document.getElementById("lets-go-outside");
         audio.play();
       }
+
+      function blaboring() {
+        var audio = document.getElementById("bla-boring");
+        audio.play();
+      }  
+      
+      function bigTune() {
+        var audio = document.getElementById("big-tune");
+        audio.play();
+      }  
+      
+      function hushUpYourNoise() {
+        var audio = document.getElementById("hush-up-your-noise");
+        audio.play();
+      } 
+      
+      function thanksForVisiting() {
+        var audio = document.getElementById("thanks-for-visiting");
+        audio.play();
+      }       
     </script>
     <div class="container">
       <div class="wrapper">
-        <div class="row">
-          <input type="button" class="col" value="Hello" onclick="hello()" />
+        <div class="row ">
+          <input type="button" class="col green" value="Hello" onclick="hello()" />
           <audio id="audio" src="hello.mp3"></audio>
 
           <!--hello-->
 
           <input
             type="button"
-            class="col"
+            class="col green"
             value="goodbye"
             onclick="goodbye()"
           />
@@ -110,42 +143,88 @@
 
           <input
             type="button"
-            class="col"
-            value="how-are-you"
+            class="col green"
+            value="how are you"
             onclick="howAreYou()"
           />
           <audio id="how-are-you" src="how-are-you.mp3"></audio>
           <!--How are you-->
 
-          <input type="button" class="col" value="yes" onclick="yes()" />
+          <input type="button" class="col yellow" value="yes" onclick="yes()" />
           <audio id="yes" src="yes.mp3"></audio>
           <!--yes-->
 
-          <input type="button" class="col" value="no" onclick="no()" />
+          <input type="button" class="col yellow" value="no" onclick="no()" />
           <audio id="no" src="no.mp3"></audio>
           <!--no-->
 
-          <input type="button" class="col" value="hungry" onclick="hungry()" />
+          <input type="button" class="col yellow" value="hungry" onclick="hungry()" />
           <audio id="hungry" src="i-am-hungry.mp3"></audio>
           <!--hungry-->
 
-          <input type="button" class="col" value="tired" onclick="tired()" />
+          <input type="button" class="col red" value="tired" onclick="tired()" />
           <audio id="tired" src="i-am-tired.mp3"></audio>
           <!--tired-->
 
-          <input type="button" class="col" value="shut up" onclick="shutUp()" />
-          <audio id="shut-up" src="shut-up.mp3"></audio>
+          <!-- <input type="button" class="col" value="shut up" onclick="shutUp()" />
+          <audio id="shut-up" src="shut-up.mp3"></audio> -->
           <!--shut up-->
 
-          <input
-            type="button"
-            class="col"
-            value="lets go outside"
-            onclick="letsGoOutside()"
-          />
-          <audio id="lets-go-outside" src="lets-go-outside.mp3"></audio>
-          <!--shut up-->
+          
+                    <!--hushUpYourNoise-->
+                    <input
+                    type="button"
+                    class="col red"
+                    value="hush Up Your Noise"
+                    onclick="hushUpYourNoise()"
+                  />
+                  <audio id="hush-up-your-noise" src="hush up your noise.mp3"></audio>
+                  <!--hushUpYourNoise-->
+                    <!--bla bla boring up-->
+                    <input
+                    type="button"
+                    class="col red"
+                    value="bla bla bla boring"
+                    onclick="blaboring()"
+                  />
+                  <audio id="bla-boring" src="bla-boring.mp3"></audio>
+                  <!--bla bla boring up-->
+
+
+                    <!--big tune-->
+                    <input
+                    type="button"
+                    class="col blue"
+                    value="big tune"
+                    onclick="bigTune()"
+                  />
+                  <audio id="big-tune" src="big tune.mp3"></audio>
+                  <!--big tune -->
+                  <input
+                  type="button"
+                  class="col blue"
+                  value="lets go outside"
+                  onclick="letsGoOutside()"
+                />
+                <audio id="lets-go-outside" src="lets-go-outside.mp3"></audio>
+                <!-- up-->
+
+                  
+                    <!--bla bla boring up-->
+                    <input
+                    type="button"
+                    class="col blue"
+                    value="Thanks for visiting"
+                    onclick="thanksForVisiting()"
+                  />
+                  <audio id="thanks-for-visiting" src="thanks for visiting.mp3"></audio>
+                  <!--bla bla boring up-->                  
         </div>
+
+
+
+
+        </div>        
       </div>
     </div>
   </body>
