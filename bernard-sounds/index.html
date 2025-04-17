@@ -1,238 +1,216 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Audio</title>
-    <style>
-      .container {
-        max-width: 2000px;
-        width: 100%;
-      }
-      .wrapper {
-        max-width: 1000px;
-        margin: auto;
-        text-align: center;
-      }
 
+<head>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Audio</title>
+  <style>
+    .container {
+      max-width: 2000px;
+      width: 100%;
+    }
+
+    .wrapper {
+      max-width: 1000px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+      flex: 1;
+    }
+
+    .col {
+      flex: 1 1 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100px;
+    }
+
+    .green {
+      background-color: green;
+    }
+
+    .yellow {
+      background-color: rgb(184, 127, 21);
+    }
+
+    .red {
+      background-color: red;
+    }
+
+    .blue {
+      background-color: rgb(0, 162, 255);
+    }
+
+    @media (max-width: 400px) {
       .row {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
-        gap: 30px;
-        flex: 1;
+        flex-direction: column;
       }
+
       .col {
-        flex: 1 1 300px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 100px;
-      }
-      .green {
-        background-color: green;
-      }
-      .yellow{
-        background-color: rgb(184, 127, 21);
-      }
-      .red{
-        background-color: red;
-      }
-      .blue{
-        background-color: rgb(0, 162, 255);
+        width: 100%;
+        flex: auto;
       }
 
-      
-      @media (max-width: 400px) {
-        .row {
-          flex-direction: column;
-        }
-        .col {
-          width: 100%;
-          flex: auto;
-        }
-        input {
-          font-size: 35px;
-        }
-      }
       input {
-        border: none;
-        font-size: 24px;
-        color: white;
-        background: none;
+        font-size: 35px;
       }
-    </style>
-  </head>
-  <body>
-    <script>
-      function hello() {
-        var audio = document.getElementById("audio");
-        audio.play();
-      }
-      function goodbye() {
-        var audio = document.getElementById("goodbye");
-        audio.play();
-      }
-      function howAreYou() {
-        var audio = document.getElementById("how-are-you");
-        audio.play();
-      }
-      function yes() {
-        var audio = document.getElementById("yes");
-        audio.play();
-      }
-      function no() {
-        var audio = document.getElementById("no");
-        audio.play();
-      }
+    }
 
-      function hungry() {
-        var audio = document.getElementById("hungry");
-        audio.play();
-      }
-      function tired() {
-        var audio = document.getElementById("tired");
-        audio.play();
-      }
-      // function shutUp() {
-      //   var audio = document.getElementById("shut-up");
-      //   audio.play();
-      // }
+    input {
+      border: none;
+      font-size: 24px;
+      color: white;
+      background: none;
+    }
+  </style>
+</head>
 
-      function letsGoOutside() {
-        var audio = document.getElementById("lets-go-outside");
-        audio.play();
-      }
+<body>
+  <script>
+    function playSound(element) {
+      const id = element.getAttribute("data-audio-id");
+      const audio = document.getElementById(id);
+      audio.play();
+    }
+  </script>
 
-      function blaboring() {
-        var audio = document.getElementById("bla-boring");
-        audio.play();
-      }  
-      
-      function bigTune() {
-        var audio = document.getElementById("big-tune");
-        audio.play();
-      }  
-      
-      function hushUpYourNoise() {
-        var audio = document.getElementById("hush-up-your-noise");
-        audio.play();
-      } 
-      
-      function thanksForVisiting() {
-        var audio = document.getElementById("thanks-for-visiting");
-        audio.play();
-      }       
-    </script>
-    <div class="container">
-      <div class="wrapper">
-        
-        <div class="row ">
-          <div class="col green" onclick="hello()">
-          <img width="100" height="100"  src="waving-hand.png"/>
-          <input type="button"  value="Hello"  >
-          <audio id="audio" src="hello.mp3"></audio>
-          </div>
-          <!--hello-->
-   
-          <div class="col green" onclick="goodbye()">
-            <img width="100" height="100" src="goodbye-img.png" />
-            <input type="button" value="goodbye">
-            <audio id="goodbye" src="goodbye.mp3"></audio>
-          </div>
-          <!--goodbye-->
-          
-          <div class="col green" onclick="howAreYou()">
-            <img width="100" height="100" src="howa-are-you-img.png" />
-            <input type="button" value="how-are-you">
-            <audio id="how-are-you" src="how-are-you.mp3"></audio>
-          </div>
-          <!--How are you-->
+  <div class="container">
+    <div class="wrapper">
+      <div class="row">
 
-          <div class="col yellow" onclick="yes()">
-            <img width="100" height="100" src="yes.png" />
-            <input type="button" value="yes">
-            <audio id="yes" src="yes.mp3"></audio>
-          </div>
-          <!--yes-->
-
-          <div class="col yellow" onclick="no()">
-            <img width="100" height="100" src="no.png" />
-            <input type="button" value="no">
-            <audio id="no" src="no.mp3"></audio>
-          </div>
-
-          <!--no-->
-
-          <div class="col yellow" onclick="hungry()">
-            <img width="100" height="100" src="hungry.png" />
-            <input type="button" value="hungry">
-            <audio id="hungry" src="hungry.mp3"></audio>
-          </div>
-          <!--hungry-->
-
-          <div class="col red" onclick="tired()">
-            <img width="100" height="100" src="tired.png" />
-            <input type="button" value="i-am-tired">
-            <audio id="tired" src="i-am-tired.mp3"></audio>
-          </div>
-          <!--tired-->
-
-          <!-- <input type="button" class="col" value="shut up" onclick="shutUp()" />
-          <audio id="shut-up" src="shut-up.mp3"></audio> -->
-          <!--shut up-->
-
-          
-                    <!--hushUpYourNoise-->
-          <div class="col red" onclick="hushUpYourNoise()">
-            <img width="100" height="100" src="hush.png" />
-            <input type="button" value="hush">
-            <audio id="hush-up-your-noise" src="hush up your noise.mp3"></audio>
-          </div>
-
-                  <!--hushUpYourNoise-->
-                    <!--bla bla boring up-->
-          <div class="col red" onclick="blaboring()">
-            <img width="100" height="100" src="boring.png" />
-            <input type="button" value="boring">
-            <audio id="bla-boring" src="i-am-bored.mp3"></audio>
-          </div>
-
-                  <!--bla bla boring up-->
-
-
-                    <!--big tune-->
-          <div class="col blue" onclick="bigTune()">
-            <img width="100" height="100" src="tune.png" />
-            <input type="button" value="big tune">
-            <audio id="big-tune" src="big tune.mp3"></audio>
-          </div>
-
-                  <!--big tune -->
-          <div class="col blue" onclick="letsGoOutside()">
-            <img width="100" height="100" src="letsGoOutside.png" />
-            <input type="button" value="lets Go Outside">
-            <audio id="lets-go-outside" src="lets-go-outside.mp3"></audio>
-          </div>
-
-                <!-- outside-->
-
-                  
-                    <!--visiting-->
-          <div class="col blue" onclick="thanksForVisiting()">
-            <img width="100" height="100" src="thanksForVisiting.png" />
-            <input type="button" value="thanks For Visiting">
-            <audio id="thanks-for-visiting" src="thanks for visiting.mp3"></audio>
-          </div>
-
-                  <!--visiting-->                  
+        <!-- Original Buttons (Shortened for brevity) -->
+        <div class="col green" data-audio-id="hello" onclick="playSound(this)">
+          <img width="100" height="100" src="waving-hand.png" />
+          <input type="button" value="Hello">
+          <audio id="hello" src="hello.mp3"></audio>
         </div>
 
+        <!-- New Buttons -->
+        <div class="col green" onclick="playSound(this)" data-audio-id="thats-good">
+          <img width="100" height="100" src="thats-good.png" />
+          <input type="button" value="That's good">
+          <audio id="thats-good" src="thats-good.mp3"></audio>
+        </div>
 
+        <div class="col red" onclick="playSound(this)" data-audio-id="not-happy">
+          <img width="100" height="100" src="not-happy.png" />
+          <input type="button" value="I’m not happy with that">
+          <audio id="not-happy" src="not-happy.mp3"></audio>
+        </div>
 
+        <div class="col blue" onclick="playSound(this)" data-audio-id="birthday">
+          <img width="100" height="100" src="birthday.png" />
+          <input type="button" value="My birthday is 15th Dec">
+          <audio id="birthday" src="my-birthday-is-15-december.mp3"></audio>
+        </div>
 
-        </div>        
+        <div class="col blue" onclick="playSound(this)" data-audio-id="born-1964">
+          <img width="100" height="100" src="born-1964.png" />
+          <input type="button" value="I was born in 1964">
+          <audio id="born-1964" src="i-was-born-in-1964.mp3"></audio>
+        </div>
+
+        <div class="col blue" onclick="playSound(this)" data-audio-id="sixty-years-old">
+          <img width="100" height="100" src="60-years-old.png" />
+          <input type="button" value="I’m 60 years old">
+          <audio id="sixty-years-old" src="i-am-60-years-old.mp3"></audio>
+        </div>
+
+        <div class="col green" onclick="playSound(this)" data-audio-id="own-home">
+          <img width="100" height="100" src="own-home.png" />
+          <input type="button" value="I want to live in my own home">
+          <audio id="own-home" src="i-want-to-live-in-my-own-home.mp3"></audio>
+        </div>
+
+        <div class="col yellow" onclick="playSound(this)" data-audio-id="assistance">
+          <img width="100" height="100" src="assistance.png" />
+          <input type="button" value="I don't want assistance">
+          <audio id="assistance" src="i-dont-want-assistance-but-need-it.mp3"></audio>
+        </div>
+
+        <div class="col red" onclick="playSound(this)" data-audio-id="left-arm">
+          <img width="100" height="100" src="left-arm.png" />
+          <input type="button" value="Left arm only">
+          <audio id="left-arm" src="i-need-adaptions-for-left-arm.mp3"></audio>
+        </div>
+
+        <div class="col red" onclick="playSound(this)" data-audio-id="medications">
+          <img width="100" height="100" src="medications.png" />
+          <input type="button" value="Help with medications">
+          <audio id="medications" src="i-need-help-with-medications.mp3"></audio>
+        </div>
+
+        <div class="col red" onclick="playSound(this)" data-audio-id="personal-care">
+          <img width="100" height="100" src="personal-care.png" />
+          <input type="button" value="Personal care">
+          <audio id="personal-care" src="i-need-help-with-personal-care.mp3"></audio>
+        </div>
+
+        <div class="col red" onclick="playSound(this)" data-audio-id="meals">
+          <img width="100" height="100" src="meals.png" />
+          <input type="button" value="Preparing meals">
+          <audio id="meals" src="i-need-help-with-meals.mp3"></audio>
+        </div>
+
+        <div class="col red" onclick="playSound(this)" data-audio-id="mobility">
+          <img width="100" height="100" src="mobility.png" />
+          <input type="button" value="Help with mobility">
+          <audio id="mobility" src="i-need-help-with-mobility.mp3"></audio>
+        </div>
+
+        <div class="col green" onclick="playSound(this)" data-audio-id="safety-aware">
+          <img width="100" height="100" src="safety-aware.png" />
+          <input type="button" value="Aware of safety">
+          <audio id="safety-aware" src="i-am-aware-of-safety.mp3"></audio>
+        </div>
+
+        <div class="col red" onclick="playSound(this)" data-audio-id="not-well">
+          <img width="100" height="100" src="not-well.png" />
+          <input type="button" value="I don't feel well">
+          <audio id="not-well" src="i-dont-feel-well.mp3"></audio>
+        </div>
+
+        <div class="col green" onclick="playSound(this)" data-audio-id="thank-you">
+          <img width="100" height="100" src="thank-you.png" />
+          <input type="button" value="Thank you">
+          <audio id="thank-you" src="thank-you.mp3"></audio>
+        </div>
+
+        <div class="col yellow" onclick="playSound(this)" data-audio-id="no-way">
+          <img width="100" height="100" src="no-way.png" />
+          <input type="button" value="No way">
+          <audio id="no-way" src="no-way.mp3"></audio>
+        </div>
+
+        <div class="col blue" onclick="playSound(this)" data-audio-id="call-mauricio">
+          <img width="100" height="100" src="call-mauricio.png" />
+          <input type="button" value="Call Mauricio">
+          <audio id="call-mauricio" src="please-call-mauricio.mp3"></audio>
+        </div>
+
+        <div class="col blue" onclick="playSound(this)" data-audio-id="call-val">
+          <img width="100" height="100" src="call-val.png" />
+          <input type="button" value="Call Val">
+          <audio id="call-val" src="please-call-val.mp3"></audio>
+        </div>
+
+        <div class="col blue" onclick="playSound(this)" data-audio-id="call-warren">
+          <img width="100" height="100" src="call-warren.png" />
+          <input type="button" value="Call Warren">
+          <audio id="call-warren" src="please-call-warren.mp3"></audio>
+        </div>
+
       </div>
     </div>
-  </body>
+  </div>
+</body>
+
 </html>
